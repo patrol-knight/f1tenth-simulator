@@ -1,0 +1,24 @@
+
+bridge:
+  ros__parameters:
+    namespace: 'f1tenth'
+    scan_topic: 'scan'
+    odom_topic: 'odom'
+    drive_topic: 'drive'
+
+    # transform related
+    scan_distance_to_base_link: 0.275
+    scan_fov: 4.7
+    scan_beams: 1080
+
+    # map parameters
+    map_path: '/workspace/src/f1tenth_simulator/maps/map_3173'
+    map_img_ext: '.pgm'
+
+    # starting pose on map
+    sx: 0.0
+    sy: 0.0
+    stheta: 0.0
+
+    # teleop
+    kb_teleop: True
