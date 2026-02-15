@@ -7,14 +7,22 @@ RUN apt-get update --fix-missing && apt-get install -y git \
     python3-pip \
     libeigen3-dev \
     ros-humble-rviz2 \
-    ros-humble-rqt-graph
+    ros-humble-rqt-graph \
+    ros-humble-rosbridge-server
+
+RUN apt-get install -y \
+    libgl1-mesa-glx \
+    libgl1-mesa-dri \
+    mesa-utils \
+    x11-apps
+
 RUN apt-get -y dist-upgrade
 RUN pip3 install transforms3d
 
 RUN git clone https://github.com/f1tenth/f1tenth_gym
 RUN cd f1tenth_gym && pip3 install -e .
 
-RUN mkdir -p workspace/src/f1tenth_simulator
+RUN mkdir -p /workspace/src/f1tenth_simulator
 COPY . /workspace/src/f1tenth_simulator
 RUN source /opt/ros/humble/setup.bash && \
     cd /workspace && \
@@ -26,4 +34,4 @@ RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc && \
     echo "source /workspace/install/setup.bash" >> ~/.bashrc
 
 WORKDIR '/workspace'
-ENTRYPOINT ["/bin/bash"]
+CMD ["/bin/bash"]
