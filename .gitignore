@@ -1,0 +1,77 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+install/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# colcon/CMake output
+build/
+install/
+log/
+doc/html
+doc/manifest.yaml
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Editors/IDE files
+.project
+.cproject
+.pydevproject
+.DS_Store
+.idea/
+.vscode/
+!*.vscode/extensions.json
+!*.vscode/settings.json
+*.swp
+*.iml
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# ROS-specific generated messages (if applicable at package level)
+# If you have action definitions, you may need to ignore generated messages
+# within specific package directories (e.g., in a 'msg/' folder)
+# e.g.,
+# msg/*Action.msg
+# src/*/msg/lisp/
+
+.vscode
