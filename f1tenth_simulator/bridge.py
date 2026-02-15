@@ -64,9 +64,8 @@ class Bridge(Node):
         self.angle_max = scan_fov / 2.
         self.angle_inc = scan_fov / scan_beams
         self.ego_namespace = self.get_parameter('namespace').value
-        ego_odom_topic = self.ego_namespace + '/' + self.get_parameter('odom_topic').value
+        ego_odom_topic = self.get_parameter('odom_topic').value
         self.scan_distance_to_base_link = self.get_parameter('scan_distance_to_base_link').value
-        
         
         self.obs, _ , self.done, _ = self.env.reset(np.array([[sx, sy, stheta]]))
         self.ego_scan = list(self.obs['scans'][0])
