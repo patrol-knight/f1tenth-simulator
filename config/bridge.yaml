@@ -20,5 +20,5 @@ bridge:
     sy: 0.0
     stheta: 0.0
 
-    # teleop
     kb_teleop: True
+    rosbridge: True

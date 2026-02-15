@@ -15,7 +15,7 @@ def generate_launch_description():
         )
     config_dict = yaml.safe_load(open(config, 'r'))
 
-    bridge_node = Node(
+    simulator_node = Node(
         package='f1tenth_simulator',
         executable='bridge',
         name='bridge',
@@ -51,11 +51,19 @@ def generate_launch_description():
         name='f1tenth_robot_state_publisher',
         parameters=[{'robot_description': Command(['xacro ', os.path.join(get_package_share_directory('f1tenth_simulator'), 'launch', 'f1tenth.xacro')])}],
     )
+    bridge_node = Node(
+        package='rosbridge_server',
+            executable='rosbridge_websocket',
+            name='rosbridge_websocket',
+            parameters=[{'port': 9090, 'address': '0.0.0.0'}]
+    )
 
     ld.add_action(rviz_node)
-    ld.add_action(bridge_node)
+    ld.add_action(simulator_node)
     ld.add_action(nav_lifecycle_node)
     ld.add_action(map_server_node)
     ld.add_action(robot_publisher)
+    if config_dict['bridge']['ros__parameters']['rosbridge']:
+        ld.add_action(bridge_node)
 
     return ld
