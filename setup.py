@@ -26,7 +26,8 @@ setup(
     license='MIT',
     entry_points={
         'console_scripts': [
-            "bridge = f1tenth_simulator.bridge:main"
+            "bridge = f1tenth_simulator.bridge:main",
+            "dummy = f1tenth_simulator.dummy:main"
         ],
     },
 )

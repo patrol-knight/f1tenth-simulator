@@ -57,6 +57,11 @@ def generate_launch_description():
             name='rosbridge_websocket',
             parameters=[{'port': 9090, 'address': '0.0.0.0'}]
     )
+    dummy_node = Node(
+        package='f1tenth_simulator',
+        executable='dummy',
+        name='dummy_planner',
+    )
 
     ld.add_action(rviz_node)
     ld.add_action(simulator_node)
@@ -65,5 +70,8 @@ def generate_launch_description():
     ld.add_action(robot_publisher)
     if config_dict['bridge']['ros__parameters']['rosbridge']:
         ld.add_action(bridge_node)
+
+
+    ld.add_action(dummy_node)
 
     return ld
