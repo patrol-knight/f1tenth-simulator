@@ -23,7 +23,7 @@ class DummyPlanner(Node):
         )
         self.odom_sub = self.create_subscription(
             Odometry,
-            '/odom',
+            '/pf/pose/odom',
             self.odom_callback,
             qos
         )
