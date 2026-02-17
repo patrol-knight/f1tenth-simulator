@@ -12,7 +12,7 @@ bridge:
     scan_beams: 1080
 
     # map parameters
-    map_path: '/workspace/src/f1tenth_simulator/maps/map_3173'
+    map_path: '/workspace/src/f1tenth_simulator/maps/map_0201'
     map_img_ext: '.pgm'
 
     # starting pose on map
