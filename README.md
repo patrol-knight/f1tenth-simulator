@@ -28,8 +28,8 @@ The stack will launches F1Tenth gym simulation, map server, bridge node, RViz2, 
 If you are running additional ROS2 nodes in WSL2, you must configure the correct DDS middleware environment. Before running any external ROS2 node, execute:
 
 ```
-chmod +x script/setup_env.sh
-source script/setup_env.sh
+chmod +x scripts/setup_env.sh
+source scripts/setup_env.sh
 ```
 
 This ensures:
