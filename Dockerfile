@@ -8,7 +8,8 @@ RUN apt-get update --fix-missing && apt-get install -y git \
     libeigen3-dev \
     ros-humble-rviz2 \
     ros-humble-rqt-graph \
-    ros-humble-rosbridge-server
+    ros-humble-rosbridge-server \
+    ros-humble-rmw-cyclonedds-cpp
 
 RUN apt-get install -y \
     libgl1-mesa-glx \
